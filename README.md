@@ -1,3 +1,5 @@
+<img src="https://projecteuler.net/profile/rocboronat.png"/>
+
 # Project Euler solutions
 
 Here's my approach to solve the Euler Project problems.

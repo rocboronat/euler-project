@@ -5,11 +5,11 @@ class PrimeCalculator {
     private val factor = FactorCalculator()
 
     fun isPrime(value: Long): Boolean {
-        if (value < 2) {
+        if (value > 2 && factor.isFactorOf(2, value)) {
             return false
         }
 
-        if (value > 2 && factor.isFactorOf(2, value)) {
+        if (value < 2) {
             return false
         }
 

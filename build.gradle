@@ -1,5 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+    id 'net.saliman.cobertura' version '2.6.0'
+    id 'com.github.kt3k.coveralls' version '2.8.2'
 }
 
 group 'at.rocboron.euler'
@@ -16,9 +18,15 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:2.3.0'
 }
 
+cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
+
+compileJava {
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+}
 compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.6"
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "1.6"
 }

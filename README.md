@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/rocboronat/euler-project.svg?branch=master)](https://travis-ci.org/rocboronat/euler-project)
+[![Coverage Status](https://coveralls.io/repos/rocboronat/euler-project/badge.svg?branch=master&service=github)](https://coveralls.io/github/rocboronat/euler-project?branch=master)
+
 <img src="https://projecteuler.net/profile/rocboronat.png"/>
 
 # Project Euler solutions

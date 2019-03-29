@@ -9,7 +9,13 @@ class PrimeCalculator {
         if (value < 2) {
             return false
         }
-        for (i in 2 until value) {
+
+        if (value > 2 && factor.isFactorOf(2, value)) {
+            return false
+        }
+
+        var i = 3L
+        while (i < value) {
             if (factor.isFactorOf(i, value)) {
                 System.out.println("$value is not prime because $i is a divider")
                 return false
@@ -18,6 +24,7 @@ class PrimeCalculator {
                 System.out.println("$value is prime because $i*$i is bigger than $value")
                 return true
             }
+            i += 2
         }
         System.out.println("$value is prime")
         return true

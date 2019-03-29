@@ -15,14 +15,11 @@ class PrimeCalculator {
         }
 
         var i = 3L
-        while (i < value) {
+        val square = Math.sqrt(value.toDouble()).toLong()
+        while (i < square) {
             if (factor.isFactorOf(i, value)) {
                 System.out.println("$value is not prime because $i is a divider")
                 return false
-            }
-            if (i * i > value) {
-                System.out.println("$value is prime because $i*$i is bigger than $value")
-                return true
             }
             i += 2
         }

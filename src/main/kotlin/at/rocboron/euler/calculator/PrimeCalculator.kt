@@ -15,7 +15,7 @@ class PrimeCalculator {
 
         var i = 3L
         val square = Math.sqrt(value.toDouble()).toLong()
-        while (i < square) {
+        while (i <= square) {
             if (factor.isFactorOf(i, value)) {
                 return false
             }

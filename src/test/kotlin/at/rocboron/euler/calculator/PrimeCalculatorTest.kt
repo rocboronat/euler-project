@@ -46,6 +46,26 @@ class PrimeCalculatorTest {
     }
 
     @Test
+    fun `12 is composite`() {
+        isNotPrime(12)
+    }
+
+    @Test
+    fun `14 is composite`() {
+        isNotPrime(14)
+    }
+
+    @Test
+    fun `15 is composite`() {
+        isNotPrime(15)
+    }
+
+    @Test
+    fun `17 is prime`() {
+        isPrime(17)
+    }
+
+    @Test
     fun `105942 is composite`() {
         isNotPrime(105942)
     }

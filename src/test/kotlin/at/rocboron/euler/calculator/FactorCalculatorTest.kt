@@ -1,6 +1,5 @@
 package at.rocboron.euler.calculator
 
-import at.rocboron.euler.calculator.FactorCalculator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
@@ -39,5 +38,5 @@ class FactorCalculatorTest {
         assertThat(factor(value, factorOf)).isFalse()
     }
 
-    private fun factor(value: Long, factorOf: Long) = FactorCalculator().isFactorOf(value, factorOf)
+    private fun factor(value: Long, factorOf: Long) = FactorCalculator().isFactorOf(factorOf, value)
 }

@@ -40,7 +40,7 @@ class Problem5(private val maxNumber: Long) {
 
     private fun isDivisibleByAllNumbersFrom1To(value: Long, maxNumber: Long): Boolean {
         for (i in 1..maxNumber) {
-            if (!factorCalculator.isFactorOf(i, value)) {
+            if (!factorCalculator.isFactorOf(value, i)) {
                 return false
             }
         }

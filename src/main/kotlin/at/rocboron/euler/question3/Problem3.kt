@@ -22,7 +22,7 @@ class Problem3 {
 
     private fun getLargestPrimeFactor(value: Long): Long {
         val firstDivider = (2..value)
-            .first { factor.isFactorOf(it, value) && prime.isPrime(value / it) }
+            .first { factor.isFactorOf(value, it) && prime.isPrime(value / it) }
         return value / firstDivider
     }
 }

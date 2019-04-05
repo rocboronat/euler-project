@@ -1,5 +1,6 @@
 package at.rocboron.euler.question7
 
+import at.rocboron.euler.ResultNotFoundException
 import at.rocboron.euler.calculator.PrimeCalculator
 
 /** 10001st prime
@@ -24,6 +25,6 @@ class Problem7(private val expectedPosition: Long) {
                 actualPosition++
             }
         }
-        throw RuntimeException("Result not found")
+        throw ResultNotFoundException()
     }
 }

@@ -1,5 +1,6 @@
 package at.rocboron.euler.question5
 
+import at.rocboron.euler.ResultNotFoundException
 import at.rocboron.euler.calculator.FactorCalculator
 import at.rocboron.euler.calculator.PrimeCalculator
 
@@ -26,7 +27,7 @@ class Problem5(private val maxNumber: Long) {
                 return value
             }
         }
-        throw RuntimeException("Can't find a result")
+        throw ResultNotFoundException()
     }
 
     private fun getNumberMultipliedBy(primeNumbers: List<Long>, multiplier: Long): Long {

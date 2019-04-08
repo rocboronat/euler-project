@@ -1,6 +1,6 @@
 package at.rocboron.euler.question6
 
-import kotlin.math.pow
+import at.rocboron.euler.pow
 
 /** Sum square difference
  *
@@ -23,12 +23,12 @@ class Problem6(val count: Long) {
     }
 
     fun sumOfTheSquares(): Long {
-        val squares = (1..count).map { it.toDouble().pow(2).toLong() }
+        val squares = (1..count).map { it.pow(2) }
         return squares.sum()
     }
 
     fun squareOfTheSum(): Long {
         val value = (1..count).sum()
-        return value.toDouble().pow(2).toLong()
+        return value.pow(2)
     }
 }

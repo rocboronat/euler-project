@@ -31,7 +31,7 @@ package at.rocboron.euler.question8
  */
 class Problem8(private val adjacentNumbers: Int) {
 
-    val number = "" +
+    private val number = "" +
             "73167176531330624919225119674426574742355349194934" +
             "96983520312774506326239578318016984801869478851843" +
             "85861560789112949495459501737958331952853208805511" +
@@ -59,16 +59,12 @@ class Problem8(private val adjacentNumbers: Int) {
             val numbersInString = number.substring(i, i + adjacentNumbers)
             val numbersInChars = numbersInString.toCharArray().map { Integer.parseInt(it.toString()).toLong() }
 
-            //println("\nCalculating numbersInChars")
             val product = numbersInChars.reduce { acc, it ->
-                //println("acc = $acc, it = $it")
                 acc * it
             }
-            //println("Result is $product")
 
             if (product > greatestProduct) {
                 greatestProduct = product
-                println("New big! $numbersInChars product is $product")
             }
         }
         return greatestProduct

@@ -20,6 +20,10 @@ dependencies {
 
 cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
 
+coveralls {
+    sourceDirs += ['src/main/kotlin']
+}
+
 compileJava {
     sourceCompatibility = 1.6
     targetCompatibility = 1.6

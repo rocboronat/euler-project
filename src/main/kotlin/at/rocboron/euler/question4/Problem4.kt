@@ -1,6 +1,6 @@
 package at.rocboron.euler.question4
 
-import at.rocboron.euler.calculator.PalindromicCalculator
+import at.rocboron.euler.calculator.extension.isPalindromic
 
 /** Largest palindrome product
  *
@@ -11,8 +11,6 @@ import at.rocboron.euler.calculator.PalindromicCalculator
  */
 class Problem4 {
 
-    private val palindromic = PalindromicCalculator()
-
     fun run(): Long {
         val palindromics = ArrayList<Long>()
         val values = ArrayList<Long>()
@@ -21,7 +19,7 @@ class Problem4 {
             values.add(position)
             for (value in values) {
                 val result = value * position
-                if (palindromic.isPalindromic(result)) {
+                if (result.isPalindromic()) {
                     palindromics.add(result)
                 }
             }

@@ -1,8 +1,8 @@
 package at.rocboron.euler.question5
 
 import at.rocboron.euler.ResultNotFoundException
-import at.rocboron.euler.calculator.FactorCalculator
-import at.rocboron.euler.calculator.PrimeCalculator
+import at.rocboron.euler.calculator.extension.isFactorOf
+import at.rocboron.euler.calculator.extension.isPrime
 
 /** Smallest multiple
  *
@@ -14,12 +14,9 @@ import at.rocboron.euler.calculator.PrimeCalculator
  */
 class Problem5(private val maxNumber: Long) {
 
-    private val factorCalculator = FactorCalculator()
-    private val primeCalculator = PrimeCalculator()
-
     fun run(): Long {
         val primeNumbers = (1L..maxNumber)
-            .filter { primeCalculator.isPrime(it) }
+            .filter { it.isPrime() }
 
         for (i in 1L..Long.MAX_VALUE) {
             val value = getNumberMultipliedBy(primeNumbers, i)
@@ -41,7 +38,7 @@ class Problem5(private val maxNumber: Long) {
 
     private fun isDivisibleByAllNumbersFrom1To(value: Long, maxNumber: Long): Boolean {
         for (i in 1..maxNumber) {
-            if (!factorCalculator.isFactorOf(value, i)) {
+            if (!value.isFactorOf(i)) {
                 return false
             }
         }

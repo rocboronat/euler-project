@@ -1,6 +1,6 @@
 package at.rocboron.euler.question2
 
-import at.rocboron.euler.calculator.EvenCalculator
+import at.rocboron.euler.calculator.extension.isEven
 
 /** Even Fibonacci numbers
  *
@@ -14,8 +14,6 @@ import at.rocboron.euler.calculator.EvenCalculator
  */
 class Problem2 {
 
-    val even = EvenCalculator()
-
     fun run(): Long {
         val list = getFibonacciNumbers(4000000)
         return list
@@ -24,7 +22,7 @@ class Problem2 {
     }
 
     private fun isEven(): (Long) -> Boolean {
-        return { even.isEven(it) }
+        return { it.isEven() }
     }
 
     fun getFibonacciNumbers(lowerThan: Long): ArrayList<Long> {

@@ -1,7 +1,7 @@
 package at.rocboron.euler.question3
 
-import at.rocboron.euler.calculator.FactorCalculator
-import at.rocboron.euler.calculator.PrimeCalculator
+import at.rocboron.euler.calculator.extension.isFactorOf
+import at.rocboron.euler.calculator.extension.isPrime
 
 /** Largest prime factor
  *
@@ -11,18 +11,13 @@ import at.rocboron.euler.calculator.PrimeCalculator
  */
 class Problem3 {
 
-    companion object {
-        val prime = PrimeCalculator()
-        val factor = FactorCalculator()
-    }
-
     fun run(): Long {
         return getLargestPrimeFactor(600851475143)
     }
 
     private fun getLargestPrimeFactor(value: Long): Long {
         val firstDivider = (2..value)
-            .first { factor.isFactorOf(value, it) && prime.isPrime(value / it) }
+            .first { value.isFactorOf(it) && (value / it).isPrime() }
         return value / firstDivider
     }
 }

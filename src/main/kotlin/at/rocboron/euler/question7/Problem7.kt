@@ -1,7 +1,7 @@
 package at.rocboron.euler.question7
 
 import at.rocboron.euler.ResultNotFoundException
-import at.rocboron.euler.calculator.PrimeCalculator
+import at.rocboron.euler.calculator.extension.isPrime
 
 /** 10001st prime
  *
@@ -13,12 +13,10 @@ import at.rocboron.euler.calculator.PrimeCalculator
  */
 class Problem7(private val expectedPosition: Long) {
 
-    private val primeCalculator = PrimeCalculator()
-
     fun run(): Long {
         var actualPosition = 1L
         for (value in 1..Long.MAX_VALUE) {
-            if (primeCalculator.isPrime(value)) {
+            if (value.isPrime()) {
                 if (actualPosition == expectedPosition) {
                     return value
                 }

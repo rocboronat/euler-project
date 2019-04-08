@@ -14,6 +14,6 @@ class Problem8Test {
     @Test
     fun getSolutionOfTheExercise() {
         val value = Problem8(13).run()
-        assertThat(value).isEqualTo(2091059712)
+        assertThat(value).isEqualTo(23514624000L)
     }
 }

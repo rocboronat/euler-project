@@ -11,7 +11,7 @@ val factorCalculator = FactorCalculator()
 val palindromicCalculator = PalindromicCalculator()
 
 fun Number.isEven(): Boolean {
-    return evenCalculator.isEven(this)
+    return evenCalculator.isEven(this.toLong())
 }
 
 fun Number.isPrime(): Boolean {

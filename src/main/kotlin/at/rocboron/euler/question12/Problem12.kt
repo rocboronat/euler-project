@@ -1,7 +1,9 @@
 package at.rocboron.euler.question12
 
 import at.rocboron.euler.ResultNotFoundException
+import at.rocboron.euler.calculator.extension.isEven
 import at.rocboron.euler.calculator.extension.isFactorOf
+import at.rocboron.euler.calculator.extension.isPrime
 
 /** Highly divisible triangular number
  *
@@ -36,11 +38,22 @@ class Problem12(val numberOfDivisors: Int) {
         throw ResultNotFoundException()
     }
 
+    var maxDividers = 0
+
     private fun countNumberOfDivisors(triangleNumber: Long): Int {
-        val count = (1..triangleNumber)
+        if (!triangleNumber.isEven()) {
+            return 0
+        }
+
+        val divisors = (2..triangleNumber / 2)
             .filter { triangleNumber.isFactorOf(it) }
-            .count()
-        println("$triangleNumber has $count divisors")
+        val count = divisors.count() + 2
+
+        if (count > maxDividers) {
+            maxDividers = count
+            println("New record: $maxDividers: $triangleNumber has $count divisors: ${divisors + triangleNumber + 1}")
+        }
+
         return count
     }
 }
